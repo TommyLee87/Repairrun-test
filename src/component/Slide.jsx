@@ -17,6 +17,7 @@ const LogoSlideStyle = styled.div`
 
   .logo-slider {
     .swiper-wrapper {
+      // 4. 부드러운 이동
       transition-timing-function: linear;
     }
 
@@ -74,13 +75,16 @@ const LogoSlide = () => {
       </div>
       <Swiper
         className="logo-slider"
+        // 1. Autoplay
         modules={[Autoplay]}
-        loop={true}
+        loop={true} // loop : true 이면 무한롤링(지나간 부분이 뒤에 다시 붙음)
         autoplay={{
           delay: 0,
         }}
+        // 2. 슬라이드당 로고 수 설정, 이동 속도 조절
         slidesPerView={7}
         speed={3000}
+        // 3. 마우스 클릭 이벤트 방지
         allowTouchMove={false}
       >
         {urlList &&
